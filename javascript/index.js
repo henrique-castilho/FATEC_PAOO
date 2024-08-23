@@ -50,8 +50,9 @@ f(g())()
 //Exemplo 1
         // const hello = () => console.log('Hello')
         // hello()
-        // const helloNome = (nome, idade) => console.log('Oi, ' + nome)
 
+        // const helloNome = (nome, idade) => console.log('Oi, ' + nome + ' você tem ' + idade + ' ?')
+        // helloNome('henrique', 19)
 
 //FUNÇÃO REGULAR
 //Exemplo 4 de função (parâmetros com valore padrão)
@@ -71,13 +72,14 @@ f(g())()
     // function somar(a,b){
     //     return a + b
     // }
-    // console.log(soma(1, 2))
+    // console.log(somar(1, 2))
 
 //Exemplo 1
     // function hello(){
     //     console.log('oi')
     // }
     // hello()
+
     // function hello(nome){
     //     console.log('Oi, ' + nome)
     // }
@@ -85,50 +87,58 @@ f(g())()
 
 /*-----------------------------------------------*/
 
-/*FUNÇÃO "REDUCE"*/
+///USO DA FUNÇÃO/MÉTODO "REDUCE" serve para reduzir um array um único valor, nesse caso para calcular a soma dos elementos do array.
 // const numeros = [1, 2, 3, 4]
 // const soma =numeros.reduce((ac, v) => ac + v)
 // console.log(soma)
 
 /*------------------------------------------------*/
 
-//FUNÇÃO "SOME"
-// const nome = ['Ana', 'João', 'Rodrigo', 'Angelica']
-// Verifica se pelo meno um começa com a
+//USO DA FUNÇÃO/MÉTODO "SOME" nesse caso verifica se ALGUM (PELO MENOS UM) começa com a ou A
+// const nomes = ['Ana', 'João', 'Rodrigo', 'Angelica']
 // const resultado = nomes.some(n => n[0] === 'A' || n[0] === 'a')
 // console.log(resultado)
 
 /*--------------------------------------------------*/
 
-//FUNÇÃO "EVERY" nesse caso verifica se TODOS começa com A ou a
+//USO DA FUNÇÃO/MÉTODO "EVERY" nesse caso verifica se TODOS começa com A ou a
+// const nomes = ['Ana', 'João', 'Rodrigo', 'Angelica']
 // const resultado = nomes.every(n => n[0] === 'A' || n[0] === 'a')
-//console.log(resultado)
+// console.log(resultado)
 
 /*------------------------------------------------------*/
 
-//let m = 1
-//const numeros = [1, 2, 3,]
-//console.log(numeros.map((valor, indice, numeros) => valor * (indice +2)))
+//USO DA FUNÇÃO/MÉTODO 'map' cria um novo array onde nesse caso cada valor é multiplicado pelo índice do elemento + 2.
+// let m = 1 (não utilizado)
+// const numeros = [1, 2, 3,]
+// console.log(numeros.map((valor, indice, numeros) => valor * (indice +2)))
 
-/*Dado esse vetor, produzir outro. Ele deve conter a letra
-inicial de cada nome, na sua posição original.*/
-// const nome = ['Ana', 'João', 'Rodrigo', 'Angelica']
-//const listaResultante = nomes.map(x => x[0])
+/*DADO ESSE VETOR, PRODUZIR OUTRO. ELE DEVE CONTER A LETRA
+INICIAL DE CADA NOME, NA SUA POSIÇÃO ORIGINAL.*/
+//Utilizando a função map
+// const nomes = ['Ana', 'João', 'Rodrigo', 'Angelica']
+// const listaResultante = nomes.map(x => x[0])
+// console.log(listaResultante)
 
 
 
 /*AULA 1*/
 
+// FEITO MAIS PRA CIMA
 // [A, J, R, A]
 // const nomes = ['Ana', 'João', 'Rodrigo', 'Angelica']
 // const resultado = []
 // console.log(resultado)
 
-//Dado esse vetor, construa outro. Ele deve conter apenas os nomes que começam com a letra A.
+/*--------------------------------------------------------------*/
+
+//DADO ESSE VETOR, CONTRUA OUTRO. ELE DEVE CONTER APENAS OS NOMES QUE COMEÇAM COM A LETRA A.
+//Jeito 1 de resolver usando metodo 'filter'
 // const nomes = ['Ana', 'João', 'Rodrigo', 'Angelica']
-// const resultado = nome.filter((n)) => {return n[0] === 'A'})
-//console.log(resultado)
+// const resultado = nomes.filter(n => {return n[0] === 'A'})
+// console.log(resultado)
 // SELECT * FROM tb_pessoa WHERE idade >= 18
+//Jeito 2 de resolver usando for com metodo 'push'
 // const resultado = []
 // for (let i = 0; i< nomes.length; i++) {
 //     if (nomes [i][0] === 'A') {
@@ -137,9 +147,9 @@ inicial de cada nome, na sua posição original.*/
 // }
 // console.log(resultado)
 
+/*--------------------------------------------------------------*/
 
-
-//Vetores
+//VETORES
 // v1 = []
 // console.log(v1.length)
 // v1[0]= 'abc'
@@ -150,8 +160,9 @@ inicial de cada nome, na sua posição original.*/
 // for(let i = 0; i < v1.length; i ++)
 //     console.log(v1[i])
 
+/*--------------------------------------------------------------*/
 
-//Comparação por igualdade: == (implicito) === (explicito)
+//COMPARAÇÃO POR IGUALDADE: == (implicito) === (explicito 'recomendado')
 // console.log(1 == 1)
 // console.log(1 === 1)
 // console.log(1 == '1')
@@ -172,7 +183,7 @@ inicial de cada nome, na sua posição original.*/
 // console.log(null == 0)
 // console.log(false == 0)
 
-
+/*--------------------------------------------------------------*/
 
 //Coerção implícita 
 // const n1 = 2
@@ -184,9 +195,14 @@ inicial de cada nome, na sua posição original.*/
 // const n4 = n1 + Number(n2)
 // console.log(n4)
 
+/*--------------------------------------------------------------*/
 
-// Declaração de variáveis e constantes
+// DECLARAÇÃO DE VARIÁVEIS E CONSTANTES
 // let, const e var
+// let: pode mudar o valor da variavel
+// const: não pode mudar o valor da variavel
+// var: não recomendado a usar
+
 // let a = null
 // let b = undefined
 // var idade = 18
@@ -198,19 +214,25 @@ inicial de cada nome, na sua posição original.*/
 //   console.log(nome + ', você pode dirigir')
 // }
 // console.log('Tchau, ' + nome)
+
 // var linguagem = 'javascript'
 // var linguagem = 'java'
+
 // const pi = 3.14
-// pi = 3.141
-//let name = 'João'
-// nome = 'João Silva'
+// pi = 3.141 (erro, pois uma variável const não pode mudar o valor)
+
+// let name = 'João'
+// nome = 'João Silva' (permitido, pois uma várivel let pode mudar valor)
 // const idade = 19
 // console.log(nome)
+
 // const n = 1
-// n++ // n = n + 1
+// n++ // n = n + 1 (Não pode pois "n" é uma variável to tipo const, se fosse let poderia)
 // const nome = 'João'
-// //nome = 'João Silva'
+// nome = 'João Silva'
 // const idade = 19
+
+/*--------------------------------------------------------------*/
 
 // js usa sistema de tipos dinâmico
 // java usa sistema de tipos estáticos
@@ -218,6 +240,8 @@ inicial de cada nome, na sua posição original.*/
 // Sistema de tipos estático: Java, c, c++, 
 // Sistma de tipos dinâmico: javascript, python, php, perl, ruby
 // Sistem de tipo gradual: c#, Dart, Typescript, Kotlin
+
+/*---------------------------------------------------------------*/
 
 // a = "abc"
 // a.toUppercase()

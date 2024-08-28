@@ -1,22 +1,156 @@
-//CLOSURES
-
-
-//FUNÇÃO DE ALTA ORDEM (CHAMANDO UMA FUNÇÃO DENTRO DE OUTRA FUNÇÃO)
-function f (funcao){
-    console.log('f')
-    funcao()()()
-    return () => console.log('i')
-}
-
-function g(){
-    console.log('g')
-    return function(){
-        console.log('Fui criada por g')
-        return () => {console.log('h'); return () => 'k'}
+/*AULA 3*/
+//OBJETOS JavaScript LITERAIS (JSON: Javascript Object Notation)
+//EXEMPLO 5. 
+//Ter a operação somar, que soma dois válores, implementada com uma arrow function que não usa return.
+//Ter a operação subtrair, que subtrai dois válores, implementada com uma function regular
+let calculadora = {
+    //Operação de somar usando uma arrow function
+    somar: (a, b) => a + b,
+    //Operação de subtrair usando uma function regular
+    subtrair: function(a, b) {
+        return a - b
+        //pode ser usado return this.somar(a, -b)
     }
 }
 
-f(g())()
+console.log(calculadora.somar(2, 2))
+console.log(calculadora.subtrair(5, 5))
+
+
+/*EXEMPLO 4. Representar: Uma concessionária tem CNPJ e endereço, com rua, numero e bairro.
+Ela possui alguns carros em estoque. Cada carro tem marca, modelo e ano de fabricação*/
+// let concessionaria = {
+//     nome: 'C1',
+//     cnpj: '123456789',
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 11,
+//         bairro: 'Vila j'
+//     },
+//     estoque: [
+//         {
+//             marca: 'Vw',
+//             modelo: 'Gol',
+//             ano: 2000
+//         },
+//         {   
+//             marca: 'GM',
+//             modelo: 'Corsa',
+//             ano: 2005
+//         }
+//     ]
+// }
+//exibir modelo corsa
+// console.log(concessionaria.estoque[1].modelo)
+//com um for, ir mostrando o modelo de cada veículo. Pesquisar sobre o for/of no site mdn
+// for (let veiculos of concessionaria.estoque) {
+//     console.log(veiculos.modelo)
+// }
+
+
+//EXEMPLO 3. Por que usa o [] (exemplo forms): quando tem espaço em branco
+
+// let pessoa = {
+//     'Seu nome' : 'Alicia'
+// }
+// console.log(pessoa['Seu nome'])
+
+
+//EXEMPLO 2. Representar: Uma pessoa chamada maria com 21 anos e mora na rua B, número 64
+// let pessoa = {
+//     nome: 'Maria',
+//     idade: 21,
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 64
+//     }
+// }
+
+// console.log(pessoa.endereco.logradouro)
+// console.log(pessoa['endereco']['numero'])
+// console.log(pessoa.endereco['logradouro'])
+// console.log(pessoa['endereco'].numero)
+
+
+//EXEMPLO 1. Representar: Uma pessoa que se chama joão e tem 17 anos
+// let pessoa = {
+//     nome: 'João',
+//     idade: 17
+// }
+// //os dois jeitos de acessar os valores do objeto
+// console.log(pessoa.nome);
+// console.log(pessoa['idade'])
+
+/*------------------------------------------ */
+
+//CLOSURES
+//EXEMPLO 3
+// function eAgora(){
+//     let cont = 1
+//     function f1(){
+//         console.log(cont)
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//         cont++
+//     }
+//     cont++
+
+//     return [f1, f2]
+// }
+// let funcoes = eAgora()
+// funcoes[0]()
+// funcoes[1]()
+
+
+//EXEMPLO 2
+// function ola(){
+//     let nome = 'João'
+//     return function(){
+//         console.log(`Olá ${nome}`)
+
+//     }
+// }
+
+// const res = ola()
+// res()
+
+
+//EXEMPLO 1
+//FUNÇÃO (CIDADAM DE PRIMEIRA CLASSE)
+// function f(){
+//     let nome = 'João'
+//     function g(){
+//         let a
+//         console.log(nome)
+//     }
+//     g()
+// }
+// f()
+
+/*------------------------------------------ */
+
+
+
+/*AULA 2*/
+
+//FUNÇÃO DE ALTA ORDEM (CHAMANDO UMA FUNÇÃO DENTRO DE OUTRA FUNÇÃO)
+// function f (funcao){
+//     console.log('f')
+//     funcao()()()
+//     return () => console.log('i')
+// }
+
+// function g(){
+//     console.log('g')
+//     return function(){
+//         console.log('Fui criada por g')
+//         return () => {console.log('h'); return () => 'k'}
+//     }
+// }
+
+// f(g())()
 
 /*------------------------------------------ */
 
@@ -25,7 +159,6 @@ f(g())()
 //     console.log('sou uma função')
 // }
 // umaFuncao()
-
 
 /*-------------------------------------- */
 

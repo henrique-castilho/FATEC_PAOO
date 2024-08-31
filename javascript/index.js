@@ -270,7 +270,7 @@ INICIAL DE CADA NOME, NA SUA POSIÇÃO ORIGINAL.*/
 // const nomes = ['Ana', 'João', 'Rodrigo', 'Angelica']
 // const resultado = nomes.filter(n => {return n[0] === 'A'})
 // console.log(resultado)
-// SELECT * FROM tb_pessoa WHERE idade >= 18
+
 //Jeito 2 de resolver usando for com metodo 'push'
 // const resultado = []
 // for (let i = 0; i< nomes.length; i++) {
@@ -330,7 +330,7 @@ INICIAL DE CADA NOME, NA SUA POSIÇÃO ORIGINAL.*/
 
 /*--------------------------------------------------------------*/
 
-// DECLARAÇÃO DE VARIÁVEIS E CONSTANTES
+//DECLARAÇÃO DE VARIÁVEIS E CONSTANTES
 // let, const e var
 // let: pode mudar o valor da variavel
 // const: não pode mudar o valor da variavel
@@ -338,6 +338,7 @@ INICIAL DE CADA NOME, NA SUA POSIÇÃO ORIGINAL.*/
 
 // let a = null
 // let b = undefined
+
 // var idade = 18
 // let nome = 'Ana'
 // console.log ('Você tem ' + idade + ' anos')
@@ -357,7 +358,7 @@ INICIAL DE CADA NOME, NA SUA POSIÇÃO ORIGINAL.*/
 // let name = 'João'
 // nome = 'João Silva' (permitido, pois uma várivel let pode mudar valor)
 // const idade = 19
-// console.log(nome)
+// console.log(nome + " tem " + idade + " anos")
 
 // const n = 1
 // n++ // n = n + 1 (Não pode pois "n" é uma variável to tipo const, se fosse let poderia)
@@ -376,15 +377,25 @@ INICIAL DE CADA NOME, NA SUA POSIÇÃO ORIGINAL.*/
 
 /*---------------------------------------------------------------*/
 
-// a = "abc"
-// a.toUppercase()
-// int a;
+//DECLARA UMA VARIAVEL "a" COM UM STRING E PASSA PARA MAIUSCULO
+// let a = "abc"
+// a = a.toUpperCase()
+// console.log(a)
+
+//ERRO, NÃO SE DECLARA UMA STRING DESSA MANEIRA
+// String s = "abc";
+// s.toUpperCase();
+// s.falar(); //ERRO PORQUE STRINGS NÃO TÊM UM MÉTODO 'falar'
+
+//ERRO, POIS NÃO SE DECLARA UMA VARIÁVEL COM int EM JS
+// int a; 
+
+//PODE, POIS EM JS PODE RETRIBUIR UMA VARIÁVEL DE UM TIPO PRO OUTRO 
 // a = 2;
 // a = "abc";
-// a.falar();
-// String s = "abc";
-// s.toUppercase();
-// s.falar();
+// a.falar(); //ERRO PORQUE STRINGS NÃO TÊM UM MÉTODO 'falar'
 
+//EXEMPLO DE TypeScript
+//SE VOCÊ TENTAR ATRIBUIR UM VALOR DE UM TIPO DIFERENTE À VARIÁVEL A DEPOIS, IRA DAR ERRO
 // let a: number = 2
-// a.falar()
+// a.falar() //ERRO: 'falar' NÃO É UM MÉTODO VÁLIDO PARA O TIPO 'NUMBER'

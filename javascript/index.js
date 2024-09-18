@@ -1,7 +1,62 @@
+/*AULA 5*/
+
+//PROCESSAMENTO ASSINCORNA PODE USAR O Promises
+//Promises
+//EXEMPLO 02
+//1 + 2 + 3 ... + n-2 + n-1 + n
+//Verifique o valor de n
+//Se for negativo devolva um promise ja rejected que da acesso ao texto "Somente valores positivos, por favor"
+//Caso contrário, desenvolva a promise que ja temos no momento
+// const calculoRapidinho = (n) => {
+//     if(n < 0){
+//         return Promise.reject("Somente valores positivos, por favor:")
+//     } else {
+//         return Promise.resolve((n / 2) * (n + 1))
+//     }    
+// }
+
+// const minhaPromise = calculoRapidinho(10)
+// minhaPromise.then(res => 
+//     console.log(`Resultado: ${res}`)
+// )
+
+// .catch(err =>{
+//     console.log(`Erro: ${err}`)
+// })
+// .finally(() => console.log('Terminando1...'))
+
+// const minhaPromise2 = calculoRapidinho(-10)
+// minhaPromise2.then(res => 
+//     console.log(`Resultado: ${res}`)
+// )
+
+// .catch(err =>{
+//     console.log(`Erro: ${err}`)
+// })
+// .finally(() => console.log('Terminando2...'))
+
+//EXEMPLO 01
+// function calculoDemorado(n) {
+//     const p = new Promise(function(resolve,  reject){
+//         let ac = 0
+//         for(let i = 1; i <= n; i++) ac += i
+//         resolve(ac)
+//     })
+//     return p
+// }
+
+// const minhaPromise = calculoDemorado(10)
+// minhaPromise.then((res)=> {
+//     console.log(`Resultado: ${res}`)
+// })
+
+/*------------------------------------------ */
+
+
+
 /*AULA 4*/
 
 //PROCESSAMENTO ASSÍNCRONA
-//Promises
 //async/await
 
 //Inferno de callbacks/código hadouken

@@ -23,6 +23,12 @@ app.post('/lembretes/:id/observacoes', (req, res) => {
     res.status(201).json(observacoesDoLembrete)
 })
 
+app.post('/eventos', (req, res) => {
+    const evento = req.body
+    console.log(evento)
+    res.end
+})
+
 
 const port = 5000
 app.listen(port, () => {

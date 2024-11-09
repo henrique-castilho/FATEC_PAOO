@@ -16,7 +16,7 @@ const funcoes = {
     }
 }
 
-app.post('/evnetos', (req, res) => {
+app.post('/eventos', (req, res) => {
     const evento = req.body
     funcoes[evento.type](evento.payload)
     res.status(200).end()

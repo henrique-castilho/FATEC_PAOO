@@ -7,23 +7,41 @@ app.use(express.json())
 
 const baseObservacoes = {}
 
+const funcoes = {
+  ObservacaoClassificada: (observacao) => {
+    const observacoes = baseObservacoes[observacao.lembreteId]
+    const obsParaAtualizar = observacoes.find(o => o.id === observacao.id)
+    obsParaAtualizar.status = observacao.status
+    axios.post('http://localhost:10000/eventos', {
+      type: 'ObservacaoAtualizada',
+      payload: {
+        id: observacao.id,
+        texto: observacao.texto,
+        lembreteId: observacao.lembreteId,
+        status: observacao.status
+      }
+    })
+
+  }
+}
+
 //POST /lembretes/1/observacoes
 app.post('/lembretes/:id/observacoes', async (req, res) => {
   const idObs = uuidv4()
   const { texto } = req.body
   const observacoesDoLembrete = baseObservacoes[req.params.id] || []
   const observacao = {
-    id: idObs,
+    id: idObs, 
     texto: texto,
     lembreteId: req.params.id,
     status: 'aguardando'
   }
   observacoesDoLembrete.push(observacao)
   baseObservacoes[req.params.id] = observacoesDoLembrete
-await axios.post('http://localhost:10000/eventos', {
-  type: 'ObservacaoCriada',
-  payload: observacao  
-})
+  await axios.post('http://localhost:10000/eventos', {
+    type: 'ObservacaoCriada',
+    payload: observacao
+  })
   res.status(201).json(observacoesDoLembrete)
 })
 
@@ -34,13 +52,16 @@ app.get('/lembretes/:id/observacoes', (req, res) => {
 
 //sua vez, faça
 app.post('/eventos', (req, res) => {
-  const evento = req.body
-  console.log(evento)
+  try{
+    const evento = req.body
+    funcoes[evento.type](evento.payload)
+    console.log(evento)
+  }
+  catch(e){}
   res.end()
 })
 
-
 const port = 5000
 app.listen(port, () => {
-    console.log(`Observações. Porta ${port}.`)
+  console.log(`Observações. Porta ${port}.`)
 })

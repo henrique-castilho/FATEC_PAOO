@@ -42,5 +42,5 @@ node app.js
 ## 👨‍💻 Autor
 
 * **Henrique Castilho**
-    * [LinkedIn](https://www.linkedin.com/in/henriquecastilho/)
+    * [LinkedIn](https://www.linkedin.com/in/henriquecastilhopires/)
     * [GitHub](https://github.com/henrique-castilho)
